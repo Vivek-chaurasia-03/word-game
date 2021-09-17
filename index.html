@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> var dum built func</title>
+</head>
+<body>
+	<h1> GUESS THE WORD</h1>
+	<hr>1st word:<hr>
+	<form action="" method="post">
+		<?php
+		echo str_shuffle("Venezuela");
+		echo "<br>";
+		?>
+	<label>Please enter your answer:</label>
+		<input type="text" name="txt_my_answer1" value=''/>
+		<br><br>
+		<hr>2nd word:<hr>
+	<?php
+		echo str_shuffle("Egypt");
+		echo "<br>";
+		?>
+	<label>Please enter your answer:</label>
+		<input type="text" name="txt_my_answer2" value=''/>
+		<br><br>
+		<hr>3rd word:<hr>
+	<?php
+		echo str_shuffle("Afghanistan");
+		echo "<br>";
+		?>
+		<label>Please enter your answer:</label>
+		<input type="text" name="txt_my_answer3" value=''/>
+		<br><br>
+		<hr>4th word:<hr>
+	<?php
+		echo str_shuffle("Pakistan");
+		echo "<br>";
+		?>
+	<label>Please enter your answer:</label>
+		<input type="text" name="txt_my_answer4" value=''/>
+		<br><br>
+		<hr>5th word:<hr>
+	<?php
+		echo str_shuffle("Russia");
+		echo "<br>";
+		?>
+	<label>Please enter your answer:</label>
+		<input type="text" name="txt_my_answer5" value=''/>
+		<br><br>
+		<input name="submit" type="submit" value="Submit"/><br><br>
+		<in type="submit" name= >
+	</form>
+
+
+
+	<?php
+	//$str = 'varun, salvin, aaron, chanjot, aryan';
+	//echo "<br>1:";
+	//print_r(explode(',',$str));
+	//echo "<br>2:";
+	//print_r(explode(',',$str,0));
+	//echo "<br>3:";
+	//print_r(explode(',',$str,-1));
+	//$str1 = 'varun, salvin, aaron, chanjot, mustafa';
+	//echo "<br>4:";
+	//print_r(implode(" ", explode(',',$str1));
+	//echo "<br>";
+	//echo str_shuffle("Venezuela");
+	///echo "<br>";
+	//echo str_shuffle("Madrid");
+
+	//GAME//
+	function checkAnswer(){
+
+	$answer1 = strtolower($_POST['txt_my_answer1']);
+	$answer2 = strtolower($_POST['txt_my_answer2']);
+	$answer3 = strtolower($_POST['txt_my_answer3']);
+	$answer4 = strtolower($_POST['txt_my_answer4']);
+	$answer5 = strtolower($_POST['txt_my_answer5']);
+
+	if($answer1 == "venezuela"){
+		echo "<br>";
+		echo "You answered venezuela correctly";
+		echo "<br>";
+	} else{
+		echo "<br>";
+		echo "You answered 1st word incorrectly";
+	   	echo "<br>";
+	}
+	unset($answer1);
+		
+	if($answer2 == "egypt"){
+		echo "<br>";
+		echo "You answered Egypt correctly";
+		echo "<br>";
+	}else{
+		echo "<br>";
+		echo "You answered 2nd word incorrectly";
+		echo "<br>";
+	}
+	unset($answer2);
+		
+	if($answer3 == "afghanistan"){
+		echo "<br>";
+		echo "You answered Afhganistan correctly";
+		echo "<br>";
+	} else{
+		echo "<br>";
+		echo "You answered 3rd word incorrectly";
+		echo "<br>";
+	}
+	unset($answer3);
+
+	if($answer4 == "pakistan"){
+		echo "<br>";
+		echo "You answered Pakistan correctly";
+		echo "<br>";
+	} else{
+		echo "<br>";
+		echo "You answered 4th word incorrectly";
+	   	echo "<br>";
+	}
+	unset($answer4);
+	
+	if($answer5 == "russia"){
+		echo "<br>";
+		echo "You answered Russia correctly";
+		echo "<br>";
+	} else{
+		echo "<br>";
+		echo "You answered 5th word incorrectly";
+	   	echo "<br>";
+	}
+	unset($answer5);
+	}
+    //function refresh(){
+    //if (isset($_POST['submit']))
+	//{
+    // Do data validation..
+    // If ok, add to db.
+    //header('Location: game.php');
+	//}
+    //}
+
+    if (array_key_exists('submit', $_POST)){
+    	checkAnswer();
+    }
+	?>
+		<?php
+/*
+		function refresh(){
+	if (!isset($_SESSION)) {
+    session_start();
+	}}
+
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    	$_SESSION['postdata'] = $_POST;
+    	unset($_POST);
+    	header("Location: ".$_SERVER['PHP_SELF']);
+    exit;
+	}*/
+	?>
+</body>
+</html>
